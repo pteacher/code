@@ -3,7 +3,28 @@
 <head>
 	<title>code</title>
 </head>
+<script type="text/javascript">
+	CLIENT_SECRET = 'c58da1ec8db1c811635299c48b5e8d0985ce04fc';
+	source = "print 'Hello World'";
+	data = {
+	    'client_secret': CLIENT_SECRET,
+	    'async': 0,
+	    'source': source,
+	    'lang': "PYTHON",
+	    'time_limit': 5,
+	    'memory_limit': 262144,
+	}
+	url = 'https://api.hackerearth.com/v3/code/run/';
+	$.ajax({
+	  type: 'POST',
+	  url: url,
+	  data: data,
+	  success: function(data) {console.log(data)},
+	  dataType: dataType
+	});
+</script>
 <body>
 viva la code!
+
 </body>
 </html>
