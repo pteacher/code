@@ -4,28 +4,23 @@
 	<title>code</title>
 </head>
 <script type="text/javascript">
-var data = JSON.stringify({
-  "source_code": "import java.util.Scanner; class Main {public static void main (String[] args){ Scanner in = new Scanner(System.in);System.out.println(\"hello, \" + in.nextLine());}}",
-  "language_id": "27",
-  "stdin": "Judge0",
-  "expected_output": "hello, Judge0"
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://api.judge0.com/submissions/?base64_encoded=false&wait=true",
+  "method": "POST",
+  "headers": {
+    "content-type": "application/json",
+    "cache-control": "no-cache",
+    "postman-token": "78a2e3ef-144b-00de-cc2e-8171ee570954"
+  },
+  "processData": false,
+  "data": "{\r\n  \"source_code\": \"import java.util.Scanner; class Main {public static void main (String[] args){ Scanner in = new Scanner(System.in);System.out.println(\\\"hello, \\\" + in.nextLine());}}\",\r\n  \"language_id\": \"27\",\r\n  \"stdin\": \"Judge0\",\r\n  \"expected_output\": \"hello, Judge0\"\r\n}"
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
 });
-
-var xhr = new XMLHttpRequest();
-xhr.withCredentials = true;
-
-xhr.addEventListener("readystatechange", function () {
-  if (this.readyState === 4) {
-    console.log(this.responseText);
-  }
-});
-
-xhr.open("POST", "https://api.judge0.com/submissions/?base64_encoded=false&wait=true");
-xhr.setRequestHeader("content-type", "application/json");
-xhr.setRequestHeader("cache-control", "no-cache");
-xhr.setRequestHeader("postman-token", "908aa3bd-2e87-16d4-ce03-a0d745f55bfa");
-
-xhr.send(data);
 </script>
 <body>
 viva la code!
